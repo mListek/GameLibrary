@@ -2,9 +2,12 @@ package pl.coderslab.app.game;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
+import pl.coderslab.app.category.Category;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "game")
@@ -20,6 +23,9 @@ public class Game {
     private Integer rating;
 
     private String comments;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Category> categories = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -51,5 +57,13 @@ public class Game {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }
