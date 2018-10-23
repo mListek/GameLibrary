@@ -33,4 +33,11 @@ public class UserController {
         userService.saveUser(user);
         return "redirect:../login";
     }
+
+    @GetMapping("/{id}")
+    public String userProfile(@PathVariable Long id, Model model){
+        User user = userService.findUserById(id);
+        model.addAttribute("user", user);
+        return "userProfile";
+    }
 }

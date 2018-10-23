@@ -30,6 +30,6 @@ public class LoginController {
             model.addAttribute("loginFailed", true);
             return "login";
         }
-        return "redirect:home";
+        return "redirect:/user/" + user.getId();
     }
 }

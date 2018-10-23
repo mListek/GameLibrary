@@ -23,7 +23,7 @@
 </div>
 <c:if test="${loginFailed == true}">
     <div class="error">Wrong login or password, please try again</div>
-    <a href="http://localhost:8080/users/add">Create new account</a>
+    <a href="http://localhost:8080/user/add">Create new account</a>
 </c:if>
 
 </body>
