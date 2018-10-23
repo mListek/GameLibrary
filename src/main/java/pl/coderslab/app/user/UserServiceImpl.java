@@ -19,13 +19,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUser(Long id) {
+    public User findUserById(Long id) {
         return userRepository.findOne(id);
     }
 
     @Override
+    public User findUserByLogin(String login) {
+        return userRepository.findFirstByLogin(login);
+    }
+
+
+    @Override
     public void deleteUser(Long id) {
-        User user = findUser(id);
+        User user = findUserById(id);
         userRepository.delete(user);
     }
 

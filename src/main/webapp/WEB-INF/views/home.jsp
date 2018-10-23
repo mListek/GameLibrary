@@ -17,14 +17,5 @@
 <h4>Log in to continue</h4>
 <a href="http://localhost:8080/login">Log in</a>
 <a href="http://localhost:8080/user/add">Create account</a>
-<%--<div>--%>
-    <%--<form method="post">--%>
-        <%--<label for="loginId">Login</label>--%>
-        <%--<input type="text" name="login" id="loginId"><br>--%>
-        <%--<label for="passwordId">Password:</label>--%>
-        <%--<input type="password" name="password" id="passwordId"><br>--%>
-        <%--<input type="submit" value="submit">--%>
-    <%--</form>--%>
-<%--</div>--%>
 </body>
 </html>
