@@ -1,6 +1,8 @@
 package pl.coderslab.app.user;
 
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,10 +12,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String username;
 
+    @NotBlank
+    @Column(unique = true)
     private String login;
 
+    @NotBlank
     private String password;
 
     public Long getId() {

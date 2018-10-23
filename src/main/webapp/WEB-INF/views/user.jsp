@@ -28,7 +28,11 @@
     <form:input type="password" path="password" id="passwordId" placeholder="Password"/>
     <form:errors path="password"/><br>
 
-    <input type="submit" value="Zapisz">
+    <input type="submit" value="Submit">
 </form:form>
+
+<c:if test="${loginFailed == true}">
+    <div class="error">This login alredy exists</div>
+</c:if>
 </body>
 </html>
