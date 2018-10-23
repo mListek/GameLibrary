@@ -1,4 +1,4 @@
-package pl.coderslab.app;
+package pl.coderslab.app.homeandlogin;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;

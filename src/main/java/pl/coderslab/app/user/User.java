@@ -2,8 +2,11 @@ package pl.coderslab.app.user;
 
 
 import org.hibernate.validator.constraints.NotBlank;
+import pl.coderslab.app.game.Game;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -21,6 +24,9 @@ public class User {
 
     @NotBlank
     private String password;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Game> games = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -52,5 +58,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
     }
 }
