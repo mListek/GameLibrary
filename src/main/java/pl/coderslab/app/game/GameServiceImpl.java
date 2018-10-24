@@ -22,7 +22,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public Game findGameByTitle(String title) {
-        return gameRepository.findFirstByTile(title);
+        return gameRepository.findFirstByTitle(title);
     }
 
     @Override

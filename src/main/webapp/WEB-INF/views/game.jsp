@@ -20,19 +20,7 @@
     <form:input path="title" id="titleId" placeholder="Game title"/>
     <form:errors path="title"/><br>
 
-    <label for="loginId"> Login:</label>
-    <form:input path="login" id="loginId" placeholder="Login"/>
-    <form:errors path="login"/><br>
-
-    <label for="passwordId"> Password:</label>
-    <form:input type="password" path="password" id="passwordId" placeholder="Password"/>
-    <form:errors path="password"/><br>
-
     <input type="submit" value="Submit">
 </form:form>
-
-<c:if test="${loginFailed == true}">
-    <div class="error">This login alredy exists</div>
-</c:if>
 </body>
 </html>
