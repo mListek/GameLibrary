@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class CategoryServiceImpl implements CategoryService{
@@ -11,7 +13,7 @@ public class CategoryServiceImpl implements CategoryService{
     private CategoryRepository categoryRepository;
 
     @Override
-    public void addCategory(Category category) {
+    public void saveCategory(Category category) {
         categoryRepository.save(category);
     }
 
@@ -29,5 +31,15 @@ public class CategoryServiceImpl implements CategoryService{
     public void deleteCategory(Long id) {
         Category category = findCategoryById(id);
         categoryRepository.delete(category);
+    }
+
+    @Override
+    public List<Category> findAllCategories() {
+        return categoryRepository.findAll();
+    }
+
+    @Override
+    public void updateCategory(Category category) {
+        categoryRepository.saveAndFlush(category);
     }
 }

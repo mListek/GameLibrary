@@ -9,28 +9,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>User List</title>
+    <title>Category List</title>
 </head>
 <body>
-<a href="http://localhost:8080/user/add">Add new</a>
+<a href="http://localhost:8080/category/add">Add new</a>
 <a href="http://localhost:8080/">Home</a>
-<h3>User List:</h3>
+<h3>Category List:</h3>
 <table>
     <tr>
         <th>Id</th>
-        <th>Username</th>
-        <th>Login</th>
+        <th>Name</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
 
-    <c:forEach var="user" items="${users}">
+    <c:forEach var="category" items="${categories}">
         <tr>
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-            <td>${user.login}</td>
-            <td><a href="http://localhost:8080/user/update/${user.id}">Edit</a></td>
-            <td><a href="http://localhost:8080/user/delete/${user.id}">Delete</a></td>
+            <td>${category.id}</td>
+            <td>${category.name}</td>
+            <td><a href="http://localhost:8080/category/update/${category.id}">Edit</a></td>
+            <td><a href="http://localhost:8080/category/delete/${category.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

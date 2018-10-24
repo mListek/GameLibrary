@@ -30,7 +30,7 @@
             <td>${game.title}</td>
             <td>${game.description}</td>
             <td><a href="http://localhost:8080/game/update/${game.id}">Edit</a></td>
-            <td><a href="http://localhost:8080/game/delete/${game.id}")">Delete</a></td>
+            <td><a href="http://localhost:8080/game/delete/${game.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
