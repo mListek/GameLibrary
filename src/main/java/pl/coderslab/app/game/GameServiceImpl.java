@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class GameServiceImpl implements GameService {
@@ -29,5 +31,15 @@ public class GameServiceImpl implements GameService {
     public void deleteGame(Long id) {
         Game game = findGameById(id);
         gameRepository.delete(game);
+    }
+
+    @Override
+    public List<Game> findAllGames() {
+        return gameRepository.findAll();
+    }
+
+    @Override
+    public void updateGame(Game game) {
+        gameRepository.saveAndFlush(game);
     }
 }

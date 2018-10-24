@@ -20,7 +20,14 @@
     <form:input path="title" id="titleId" placeholder="Game title"/>
     <form:errors path="title"/><br>
 
+    <label for="descriptionId"> Description:</label>
+    <form:input path="description" id="descriptionId" placeholder="Description"/>
+
     <input type="submit" value="Submit">
 </form:form>
+
+<c:if test="${gameFailed == true}">
+    <div class="error">This game alredy exists</div>
+</c:if>
 </body>
 </html>

@@ -42,12 +42,6 @@ public class UserController {
         return "userList";
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return "redirect:../list";
-    }
-
     @GetMapping("/update/{id}")
     public String updateUser(@PathVariable Long id, Model model) {
         User user = userService.findUserById(id);
@@ -57,10 +51,16 @@ public class UserController {
 
     @PostMapping("/update/{id}")
     public String updateUser(@Valid @ModelAttribute User user, BindingResult result) {
-        if(result.hasErrors()) {
+        if (result.hasErrors()) {
             return "user";
         }
         userService.updateUser(user);
+        return "redirect:../list";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
         return "redirect:../list";
     }
 
