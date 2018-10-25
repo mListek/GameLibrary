@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>User List</title>
+    <title>Message List</title>
 </head>
 <body>
 <div class="links">
@@ -18,25 +18,23 @@
     <a href="http://localhost:8080/">Your games</a>
     <a href="http://localhost:8080/">Log in</a>
 </div>
-<a href="http://localhost:8080/user/add">Add new</a>
+<a href="http://localhost:8080/message/add">Add new</a>
 <a href="http://localhost:8080/">Home</a>
-<h3>User List:</h3>
+<h3>Message List:</h3>
 <table>
     <tr>
         <th>Id</th>
-        <th>Username</th>
-        <th>Login</th>
-        <th>Edit</th>
+        <th>Title</th>
+        <th>Description</th>
         <th>Delete</th>
     </tr>
 
-    <c:forEach var="user" items="${users}">
+    <c:forEach var="message" items="${messages}">
         <tr>
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-            <td>${user.login}</td>
-            <td><a href="http://localhost:8080/user/update/${user.id}">Edit</a></td>
-            <td><a href="http://localhost:8080/user/delete/${user.id}">Delete</a></td>
+            <td>${message.id}</td>
+            <td>${message.title}</td>
+            <td>${message.description}</td>
+            <td><a href="http://localhost:8080/message/delete/${message.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

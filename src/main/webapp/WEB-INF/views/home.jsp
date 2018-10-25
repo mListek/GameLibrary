@@ -13,8 +13,14 @@
     <title>Home</title>
 </head>
 <body>
+<div class="links">
+<a href="http://localhost:8080/game/list">Game list</a>
+<a href="http://localhost:8080/">Messages</a>
+<a href="http://localhost:8080/">Your games</a>
+<a href="http://localhost:8080/">Log in</a>
+</div>
 <h3>Welcome to Game Library!</h3>
-<h4>Log in to continue</h4>
+<h4>Log in to see your profile</h4>
 <a href="http://localhost:8080/login">Log in</a>
 <a href="http://localhost:8080/user/add">Create account</a>
 </body>

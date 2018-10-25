@@ -12,6 +12,12 @@
     <title>Game List</title>
 </head>
 <body>
+<div class="links">
+    <a href="http://localhost:8080/game/list">Game list</a>
+    <a href="http://localhost:8080/">Messages</a>
+    <a href="http://localhost:8080/">Your games</a>
+    <a href="http://localhost:8080/">Log in</a>
+</div>
 <a href="http://localhost:8080/game/add">Add new</a>
 <a href="http://localhost:8080/">Home</a>
 <h3>Game List:</h3>

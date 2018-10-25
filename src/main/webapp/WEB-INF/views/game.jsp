@@ -13,7 +13,13 @@
     <title>Add game</title>
 </head>
 <body>
-<h3>Add new user:</h3>
+<div class="links">
+    <a href="http://localhost:8080/game/list">Game list</a>
+    <a href="http://localhost:8080/">Messages</a>
+    <a href="http://localhost:8080/">Your games</a>
+    <a href="http://localhost:8080/">Log in</a>
+</div>
+<h3>Add new game:</h3>
 <form:form method="post" modelAttribute="game">
 
     <label for="titleId"> Title:</label>
@@ -21,7 +27,7 @@
     <form:errors path="title"/><br>
 
     <label for="descriptionId"> Description:</label>
-    <form:input path="description" id="descriptionId" placeholder="Description"/>
+    <form:textarea path="description" id="descriptionId" placeholder="Description"/>
 
     <input type="submit" value="Submit">
 </form:form>

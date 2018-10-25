@@ -13,6 +13,12 @@
     <title>Add user</title>
 </head>
 <body>
+<div class="links">
+    <a href="http://localhost:8080/game/list">Game list</a>
+    <a href="http://localhost:8080/">Messages</a>
+    <a href="http://localhost:8080/">Your games</a>
+    <a href="http://localhost:8080/">Log in</a>
+</div>
 <h3>Add new user:</h3>
 <form:form method="post" modelAttribute="user">
 
