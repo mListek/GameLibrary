@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.user.User;
+import pl.coderslab.app.user.UserService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -16,6 +17,9 @@ import java.util.List;
 public class MessageController {
     @Autowired
     private MessageService messageService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/add")
     public String addMessage(Model model) {
@@ -28,6 +32,12 @@ public class MessageController {
         if (result.hasErrors()) {
             return "message";
         }
+        User checkUser = userService.findUserByUsername(message.getUsername());
+        if (checkUser == null) {
+            model.addAttribute("noSuchUser", true);
+            return "message";
+        }
+        message.setUser(checkUser);
         messageService.saveMessage(message);
         return "redirect:list";
     }
