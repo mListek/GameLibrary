@@ -13,11 +13,11 @@
 </head>
 <body>
 <div class="links">
-    <a href="http://localhost:8080/">Home</a>
+    <a href="http://localhost:8080/home">Home</a>
     <a href="http://localhost:8080/game/list">Game list</a>
-    <a href="http://localhost:8080/">Messages</a>
+    <a href="http://localhost:8080/message/list">Messages</a>
     <a href="http://localhost:8080/">Your games</a>
-    <a href="http://localhost:8080/">Log in</a>
+    <a href="http://localhost:8080/logout">Log out</a>
 </div>
 <a href="http://localhost:8080/game/add">Add new</a>
 <a href="http://localhost:8080/">Home</a>
@@ -27,17 +27,21 @@
         <th>Id</th>
         <th>Title</th>
         <th>Description</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <c:if test="${sessionScope.admin == 'true'}">
+            <th>Edit</th>
+            <th>Delete</th>
+        </c:if>
     </tr>
 
     <c:forEach var="game" items="${games}">
         <tr>
             <td>${game.id}</td>
-            <td>${game.title}</td>
+            <td><a href="http://localhost:8080/game/${game.id}">${game.title}</a></td>
             <td>${game.description}</td>
+            <c:if test="${sessionScope.admin == 'true'}">
             <td><a href="http://localhost:8080/game/update/${game.id}">Edit</a></td>
             <td><a href="http://localhost:8080/game/delete/${game.id}">Delete</a></td>
+            </c:if>
         </tr>
     </c:forEach>
 </table>

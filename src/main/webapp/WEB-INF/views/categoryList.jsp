@@ -13,11 +13,11 @@
 </head>
 <body>
 <div class="links">
-    <a href="http://localhost:8080/">Home</a>
+    <a href="http://localhost:8080/home">Home</a>
     <a href="http://localhost:8080/game/list">Game list</a>
-    <a href="http://localhost:8080/">Messages</a>
+    <a href="http://localhost:8080/message/list">Messages</a>
     <a href="http://localhost:8080/">Your games</a>
-    <a href="http://localhost:8080/">Log in</a>
+    <a href="http://localhost:8080/logout">Log out</a>
 </div>
 <a href="http://localhost:8080/category/add">Add new</a>
 <a href="http://localhost:8080/">Home</a>

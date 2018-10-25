@@ -5,16 +5,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.app.user.User;
+import pl.coderslab.app.comment.Comment;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("/game")
 public class GameController {
-@Autowired
-private GameService gameService;
+    @Autowired
+    private GameService gameService;
 
     @GetMapping("/add")
     public String addGame(Model model) {
@@ -71,4 +72,36 @@ private GameService gameService;
         model.addAttribute("game", game);
         return "gameProfile";
     }
+
+    @PostMapping("/{id}")
+    public String gameProfile(@RequestParam String  description,
+                              @RequestParam String game) {
+        Game game1 = gameService.findGameByTitle(game);
+        List<Comment> comments = game1.getComments();
+        if(comments == null) {
+            comments = new ArrayList<>();
+        }
+        Comment comment = new Comment();
+        comment.setDescription(description);
+        comments.add(comment);
+        game1.setComments(comments);
+        return "gameProfile";
+    }
+
+    @GetMapping("/{id}/rate")
+    public String gameRate(@PathVariable Long id, Model model) {
+        Game game = gameService.findGameById(id);
+        model.addAttribute("game", game);
+        return "gameRate";
+    }
+
+    @PostMapping("/{id}/rate")
+    public String gameRate(@PathVariable Long id,
+                           @RequestParam String rating,
+                           @RequestParam String game) {
+        Game game1 = gameService.findGameByTitle(game);
+        game1.setRating(Integer.parseInt(rating));
+        return "gameProfile";
+    }
+
 }

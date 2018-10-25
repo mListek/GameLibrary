@@ -3,6 +3,7 @@ package pl.coderslab.app.game;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 import pl.coderslab.app.category.Category;
+import pl.coderslab.app.comment.Comment;
 
 
 import javax.persistence.*;
@@ -24,7 +25,9 @@ public class Game {
     @Range(min = 1, max = 10)
     private Integer rating;
 
-    private String comments;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_comment")
+    private List<Comment> comments = new ArrayList<>();
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Category> categories = new ArrayList<>();
@@ -61,11 +64,11 @@ public class Game {
         this.rating = rating;
     }
 
-    public String getComments() {
+    public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(String comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 
