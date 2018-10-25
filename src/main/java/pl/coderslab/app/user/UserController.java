@@ -31,8 +31,11 @@ public class UserController {
             model.addAttribute("loginFailed", true);
             return "user";
         }
+        if(user.getUsername().equals("admin")) {
+            user.setAdmin(true);
+        }
         userService.saveUser(user);
-        return "redirect:../login";
+        return "redirect:../";
     }
 
     @GetMapping("/list")

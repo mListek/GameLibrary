@@ -26,6 +26,8 @@ public class User {
     @NotBlank
     private String password;
 
+    private boolean admin;
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Game> games = new ArrayList<>();
 
@@ -62,6 +64,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     public List<Game> getGames() {

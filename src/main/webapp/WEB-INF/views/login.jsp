@@ -12,12 +12,8 @@
     <title>Login</title>
 </head>
 <body>
-<div class="links">
-    <a href="http://localhost:8080/game/list">Game list</a>
-    <a href="http://localhost:8080/">Messages</a>
-    <a href="http://localhost:8080/">Your games</a>
-    <a href="http://localhost:8080/">Log in</a>
-</div>
+<h3>Welcome to Internet Game Database</h3>
+<h4>Please log in to enter:</h4>
 <div>
     <form method="post">
         <label for="loginId">Login</label>
@@ -29,8 +25,11 @@
 </div>
 <c:if test="${loginFailed == true}">
     <div class="error">Wrong login or password, please try again</div>
-    <a href="http://localhost:8080/user/add">Create new account</a>
 </c:if>
+<div>
+    <span>Dont have and account? <a href="http://localhost:8080/user/add">Create one</a></span>
+</div>
+
 
 </body>
 </html>

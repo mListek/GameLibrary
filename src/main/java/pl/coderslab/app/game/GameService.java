@@ -1,6 +1,5 @@
 package pl.coderslab.app.game;
 
-
 import java.util.List;
 
 public interface GameService {
