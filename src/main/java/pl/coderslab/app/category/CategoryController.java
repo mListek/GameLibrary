@@ -7,7 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.game.Game;
 import pl.coderslab.app.game.GameService;
-
+//to be added
 import javax.validation.Valid;
 import java.util.List;
 

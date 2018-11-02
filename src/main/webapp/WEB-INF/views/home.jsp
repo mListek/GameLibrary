@@ -28,12 +28,13 @@
 <h4>Lastest news:</h4>
 <div>
     <c:forEach var="currentNews" items="${news}">
-        ${currentNews.title}
+        ${currentNews.title}<br>
         ${currentNews.description}
         <c:if test="${sessionScope.admin == 'true'}">
         <a href="http://localhost:8080/news/update/${currentNews.id}">Edit</a>
         <a href="http://localhost:8080/news/delete/${currentNews.id}">Delete</a><br>
         </c:if>
+        <br /><br />
     </c:forEach>
 </div>
 </body>
