@@ -17,7 +17,7 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    @GetMapping("/add/{id}")//do poprawy
+    @GetMapping("/add/{id}")//do poprawy, przerobic na comment
     public String addComment(Model model) {
         model.addAttribute("comment", new Comment());
         return "comment";
