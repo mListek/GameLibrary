@@ -3,7 +3,6 @@ package pl.coderslab.app.user;
 
 import org.hibernate.validator.constraints.NotBlank;
 import pl.coderslab.app.game.Game;
-import pl.coderslab.app.message.Message;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -30,9 +29,6 @@ public class User {
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Game> games = new ArrayList<>();
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Message> messages = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -80,13 +76,5 @@ public class User {
 
     public void setGames(List<Game> games) {
         this.games = games;
-    }
-
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
     }
 }

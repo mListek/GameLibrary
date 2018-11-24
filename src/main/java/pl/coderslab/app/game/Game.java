@@ -2,7 +2,6 @@ package pl.coderslab.app.game;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
-import pl.coderslab.app.category.Category;
 import pl.coderslab.app.comment.Comment;
 
 
@@ -28,9 +27,6 @@ public class Game {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_comment")
     private List<Comment> comments = new ArrayList<>();
-
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<Category> categories = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -70,13 +66,5 @@ public class Game {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
     }
 }

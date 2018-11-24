@@ -12,6 +12,11 @@
     <title>Rate game</title>
 </head>
 <body>
+<div class="links">
+    <a href="http://localhost:8080/home">Home</a>
+    <a href="http://localhost:8080/game/list">Game list</a>
+    <a href="http://localhost:8080/logout">Log out</a>
+</div>
 <form method="post">
     <label for="rateId"> Rate the game:</label>
     <input type="number" name="rating" id="rateId" placeholder="1-10">

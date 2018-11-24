@@ -15,8 +15,6 @@
 <div class="links">
     <a href="http://localhost:8080/home">Home</a>
     <a href="http://localhost:8080/game/list">Game list</a>
-    <a href="http://localhost:8080/message/list">Messages</a>
-    <a href="http://localhost:8080/">Your games</a>
     <a href="http://localhost:8080/logout">Log out</a>
 </div>
 <div><h4>Welcome to your profile ${user.username}</h4></div>

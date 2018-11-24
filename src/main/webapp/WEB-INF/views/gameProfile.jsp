@@ -13,12 +13,16 @@
     <title>Game profile</title>
 </head>
 <body>
+<div class="links">
+    <a href="http://localhost:8080/home">Home</a>
+    <a href="http://localhost:8080/game/list">Game list</a>
+    <a href="http://localhost:8080/logout">Log out</a>
+</div>
 
 <h3>${game.title}</h3>
 <div>
     ${game.description}
 </div>
-<a href="http://localhost:8080/user/addgame">Add game to your list</a>
 <div>
     <span>Current rating: ${game.rating}</span>
     <c:if test="${game.rating == null}">
