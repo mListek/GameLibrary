@@ -101,7 +101,7 @@ public class GameController {
                            @RequestParam String game) {
         Game game1 = gameService.findGameByTitle(game);
         game1.setRating(Integer.parseInt(rating));
-        return "gameProfile";
+        return "redirect:../{id}";
     }
 
 }
