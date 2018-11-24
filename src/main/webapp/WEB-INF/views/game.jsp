@@ -30,17 +30,22 @@
         </ul>
     </div>
 </nav>
-<h3>Add new game:</h3>
+<h3 class="text-info mx-sm-3">Add new game:</h3>
 <form:form method="post" modelAttribute="game">
 
-    <label for="titleId"> Title:</label>
-    <form:input path="title" id="titleId" placeholder="Game title"/>
-    <form:errors path="title"/><br>
-
-    <label for="descriptionId"> Description:</label>
-    <form:textarea path="description" id="descriptionId" placeholder="Description"/>
-
-    <input type="submit" value="Submit">
+    <div class="form-group mx-sm-3 col-4">
+        <label for="titleId" class="text-info"> Title:</label>
+        <form:input path="title" cssClass="form-control" id="titleId" placeholder="Game title"/>
+        <form:errors cssClass="text-danger" path="title"/><br>
+    </div>
+    <div class="form-group mx-sm-3 col-5">
+        <label for="descriptionId" class="text-info"> Description:</label>
+        <form:textarea rows="6" path="description" cssClass="form-control" id="descriptionId"
+                       placeholder="Description"/>
+    </div>
+    <div class="form-group mx-sm-3">
+        <input type="submit" class="btn btn-info" value="Submit">
+    </div>
 </form:form>
 
 <c:if test="${gameFailed == true}">

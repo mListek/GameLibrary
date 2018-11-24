@@ -29,10 +29,13 @@
     </div>
 </nav>
 <form method="post">
-    <label for="rateId"> Rate the game:</label>
-    <input type="number" name="rating" id="rateId" placeholder="1-10">
-    <input type="submit" value="Add rating">
-    <input hidden type="text" name="game" value="${game.title}">
+    <div class="form-group mx-sm-3">
+        <label for="rateId" class="text-info"> Rate the game:</label>
+        <input type="number" class="form-control" name="rating" id="rateId" placeholder="1-10">
+    </div>
+    <div class="form-control mx-sm-3">
+        <input type="submit" class="btn btn-info" value="Add rating">
+    </div>
 </form>
 </body>
 </html>

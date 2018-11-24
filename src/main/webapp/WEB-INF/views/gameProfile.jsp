@@ -30,25 +30,22 @@
     </div>
 </nav>
 
-<h3>${game.title}</h3>
-<div>
+<h3 class="text-info mx-sm-3">${game.title}</h3>
+<hr>
+<div class="text-info mx-sm-3">
     ${game.description}
 </div>
-<div>
+<hr>
+<div class="text-info mx-sm-3">
     <span>Current rating: ${game.rating}</span>
     <c:if test="${game.rating == null}">
         <span>No ratings yet</span><br>
-        <a href="http://localhost:8080/game/${game.id}/rate">Rate this game</a>
+        <a class="btn btn-info" href="http://localhost:8080/game/${game.id}/rate">Rate this game</a>
     </c:if>
 </div>
-<%--<form method="post">--%>
-    <%--<label for="commentId">Add comment:</label>--%>
-    <%--<textarea id="commentId" name="description" placeholder="Comment..."></textarea>--%>
-    <%--<input type="submit" value="Add coment">--%>
-    <%--<input hidden type="text" name="game" value="${game.title}">--%>
-<%--</form>--%>
-<div>
-    <h6>Comments:</h6>
+<hr>
+<div class="text-info mx-sm-3">
+    <h6><u>Comments:</u></h6>
     No comments yet
 </div>
 </body>

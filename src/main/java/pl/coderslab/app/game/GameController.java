@@ -89,18 +89,15 @@ public class GameController {
     }
 
     @GetMapping("/{id}/rate")
-    public String gameRate(@PathVariable Long id, Model model) {
-        Game game = gameService.findGameById(id);
-        model.addAttribute("game", game);
+    public String gameRate(@PathVariable Long id) {
         return "gameRate";
     }
 
     @PostMapping("/{id}/rate")
     public String gameRate(@PathVariable Long id,
-                           @RequestParam String rating,
-                           @RequestParam String game) {
-        Game game1 = gameService.findGameByTitle(game);
-        game1.setRating(Integer.parseInt(rating));
+                           @RequestParam String rating) {
+        Game game2 = gameService.findGameById(id);
+        game2.setRating(Integer.parseInt(rating));
         return "redirect:../{id}";
     }
 
