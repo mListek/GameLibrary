@@ -15,11 +15,21 @@
     <title>Add game</title>
 </head>
 <body>
-<div class="links">
-    <a href="http://localhost:8080/home">Home</a>
-    <a href="http://localhost:8080/game/list">Game list</a>
-    <a href="http://localhost:8080/logout">Log out</a>
-</div>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="navbar-expand">
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/game/list">Game list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/logout">Log out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <h3>Add new game:</h3>
 <form:form method="post" modelAttribute="game">
 

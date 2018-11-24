@@ -14,14 +14,22 @@
     <title>Game List</title>
 </head>
 <body>
-<nav class="navbar bg-primary">
-    Hello...
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="navbar-expand">
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/game/list">Game list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/logout">Log out</a>
+            </li>
+        </ul>
+    </div>
 </nav>
-<div class="links">
-    <a href="http://localhost:8080/home">Home</a>
-    <a href="http://localhost:8080/game/list">Game list</a>
-    <a href="http://localhost:8080/logout">Log out</a>
-</div>
 <a href="http://localhost:8080/game/add">Add new game to the list</a>
 <h3>Game List:</h3>
 <table>
@@ -41,8 +49,8 @@
             <td><a href="http://localhost:8080/game/${game.id}">${game.title}</a></td>
             <td>${game.description}</td>
             <c:if test="${sessionScope.admin == 'true'}">
-            <td><a href="http://localhost:8080/game/update/${game.id}">Edit</a></td>
-            <td><a href="http://localhost:8080/game/delete/${game.id}">Delete</a></td>
+                <td><a href="http://localhost:8080/game/update/${game.id}">Edit</a></td>
+                <td><a href="http://localhost:8080/game/delete/${game.id}">Delete</a></td>
             </c:if>
         </tr>
     </c:forEach>
