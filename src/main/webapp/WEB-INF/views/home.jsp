@@ -31,20 +31,22 @@
         </ul>
     </div>
 </nav>
-<h3>Internet Game Database!</h3>
-    <div>
-       <span>Welcome ${sessionScope.username}!</span>
+<h3 class="text-info mx-sm-3 my-1 font-weight-bold">Internet Game Database!</h3>
+    <div class="text-info mx-sm-3">
+       <span>Welcome </span><span class="font-italic text-success">${sessionScope.username}!</span>
     </div>
-<h4>Lastest news:</h4>
-<div>
+<h4 class="text-info mx-sm-3"><u>Lastest news:</u></h4>
+<hr>
+<div class="text-info mx-sm-3">
     <c:forEach var="currentNews" items="${news}">
-        ${currentNews.title}<br>
-        ${currentNews.description}
+        <span class="font-weight-bold">${currentNews.title}</span><br>
+        <span>${currentNews.description}</span>
         <c:if test="${sessionScope.admin == 'true'}">
         <a href="http://localhost:8080/news/update/${currentNews.id}">Edit</a>
         <a href="http://localhost:8080/news/delete/${currentNews.id}">Delete</a><br>
         </c:if>
         <br /><br />
+        <hr>
     </c:forEach>
 </div>
 </body>

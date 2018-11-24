@@ -27,33 +27,40 @@
             <li class="nav-item">
                 <a class="nav-link" href="http://localhost:8080/logout">Log out</a>
             </li>
+            <li>
+                <a class="nav-link text-success" href="http://localhost:8080/game/add"><u>Add new game to the
+                    list</u></a>
+            </li>
         </ul>
     </div>
 </nav>
-<a href="http://localhost:8080/game/add">Add new game to the list</a>
-<h3>Game List:</h3>
-<table>
+
+<h3 class="text-info mx-sm-3">Game List:</h3>
+<table class="table table-hover text-info">
+    <thead class="thead-dark">
     <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Description</th>
+        <th class="border-info" scope="col"><span class="text-info">Id</span></th>
+        <th class="border-info" scope="col"><span class="text-info">Title</span></th>
+        <th class="border-info" scope="col"><span class="text-info">Description</span></th>
         <c:if test="${sessionScope.admin == 'true'}">
-            <th>Edit</th>
-            <th>Delete</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
         </c:if>
     </tr>
-
+    </thead>
+    <tbody>
     <c:forEach var="game" items="${games}">
         <tr>
-            <td>${game.id}</td>
-            <td><a href="http://localhost:8080/game/${game.id}">${game.title}</a></td>
-            <td>${game.description}</td>
+            <td class="border-info">${game.id}</td>
+            <td class="border-info"><a class="text-info" href="http://localhost:8080/game/${game.id}">${game.title}</a></td>
+            <td class="border-info"><a class="text-info" href="http://localhost:8080/game/${game.id}">${game.description}</td>
             <c:if test="${sessionScope.admin == 'true'}">
-                <td><a href="http://localhost:8080/game/update/${game.id}">Edit</a></td>
-                <td><a href="http://localhost:8080/game/delete/${game.id}">Delete</a></td>
+                <td class="border-info"><a class="text-danger" href="http://localhost:8080/game/update/${game.id}">Edit</a></td>
+                <td class="border-info"><a class="text-danger" href="http://localhost:8080/game/delete/${game.id}">Delete</a></td>
             </c:if>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
 </body>
 </html>

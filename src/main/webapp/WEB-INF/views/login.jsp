@@ -36,7 +36,7 @@
 <c:if test="${loginFailed == true}">
     <div class="error text-danger font-weight-bold">Wrong login or password, please try again!</div>
 </c:if>
-<div>
+<div class="mx-sm-3">
     <span class="text-info">Dont have an account? <a class="text-success font-weight-bold font"
                                                      href="http://localhost:8080/user/add"><u>Create one</u></a></span>
 </div>
