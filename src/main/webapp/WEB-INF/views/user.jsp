@@ -19,37 +19,39 @@
     <div class="navbar-expand">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/game/list">Game list</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://localhost:8080/logout">Log out</a>
+                <a class="nav-link" href="http://localhost:8080/">Back to Login</a>
             </li>
         </ul>
     </div>
 </nav>
-<h3>Add new user:</h3>
+<h3 class="text-info mx-sm-3">Add new user:</h3>
 <form:form method="post" modelAttribute="user">
 
-    <label for="usernameId"> Profile name:</label>
-    <form:input path="username" id="usernameId" placeholder="Username"/>
-    <form:errors path="username"/><br>
+    <div class="form-group mx-sm-3 col-4">
+        <label for="usernameId" class="text-info"> Profile name:</label>
+        <form:input path="username" cssClass="form-control" id="usernameId" placeholder="Username"/>
+        <form:errors cssClass="text-danger" path="username"/><br>
+    </div>
 
-    <label for="loginId"> Login:</label>
-    <form:input path="login" id="loginId" placeholder="Login"/>
-    <form:errors path="login"/><br>
+    <div class="form-group mx-sm-3 col-4">
+        <label for="loginId" class="text-info"> Login:</label>
+        <form:input path="login" cssClass="form-control" id="loginId" placeholder="Login"/>
+        <form:errors cssClass="text-danger" path="login"/><br>
+    </div>
 
-    <label for="passwordId"> Password:</label>
-    <form:input type="password" path="password" id="passwordId" placeholder="Password"/>
-    <form:errors path="password"/><br>
+    <div class="form-group mx-sm-3 col-4">
+        <label for="passwordId" class="text-info"> Password:</label>
+        <form:input type="password" cssClass="form-control" path="password" id="passwordId" placeholder="Password"/>
+        <form:errors cssClass="text-danger" path="password"/><br>
+    </div>
 
-    <input type="submit" value="Submit">
+    <div class="form-group mx-sm-3">
+        <input type="submit" class="btn btn-info" value="Submit">
+    </div>
 </form:form>
 
 <c:if test="${loginFailed == true}">
-    <div class="error">This login alredy exists</div>
+    <div class="error text-danger">This login alredy exists!</div>
 </c:if>
 </body>
 </html>

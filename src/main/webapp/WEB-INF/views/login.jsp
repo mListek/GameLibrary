@@ -14,22 +14,31 @@
     <title>Login</title>
 </head>
 <body>
-<h3>Welcome to Internet Game Database</h3>
-<h4>Please log in to enter:</h4>
+<div>
+    <h3 class="text-info font-weight-bold mx-sm-3">Welcome to Internet Game Database</h3>
+</div>
+<h4 class="text-info mx-sm-3">Please log in to enter:</h4>
 <div>
     <form method="post">
-        <label for="loginId">Login</label>
-        <input type="text" name="login" id="loginId" placeholder="Login"><br>
-        <label for="passwordId">Password:</label>
-        <input type="password" name="password" id="passwordId" placeholder="Password"><br>
-        <input type="submit" value="Submit">
+        <div class="form-group mx-sm-3 my-2 col-4">
+            <label for="loginId" class="text-info">Login</label>
+            <input type="text" class="form-control" name="login" id="loginId" placeholder="Login"><br>
+        </div>
+        <div class="form-group mx-sm-3 mt-2 mb-4 col-4">
+            <label for="passwordId" class="text-info">Password:</label>
+            <input type="password" class="form-control" name="password" id="passwordId" placeholder="Password"><br>
+        </div>
+        <div class="form-group mx-sm-3">
+            <input type="submit" class="btn btn-info" value="Submit">
+        </div>
     </form>
 </div>
 <c:if test="${loginFailed == true}">
-    <div class="error">Wrong login or password, please try again</div>
+    <div class="error text-danger font-weight-bold">Wrong login or password, please try again!</div>
 </c:if>
 <div>
-    <span>Dont have an account? <a href="http://localhost:8080/user/add">Create one</a></span>
+    <span class="text-info">Dont have an account? <a class="text-success font-weight-bold font"
+                                                     href="http://localhost:8080/user/add"><u>Create one</u></a></span>
 </div>
 
 </body>
